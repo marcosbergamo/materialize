@@ -2,17 +2,6 @@ module.exports = function(grunt) {
  
   // configure the tasks
   grunt.initConfig({
-    
-    
-    
-//  Git Info
-//    gitinfo: {
-//        options: {
-//          
-//        },
-//        ...
-//    },
-
 //  Copy
     copy: {
       dist: { cwd: 'font', src: [ '**' ], dest: 'dist/font', expand: true },
@@ -30,8 +19,8 @@ module.exports = function(grunt) {
         }
       },
       
-      min: {                            // Target
-        options: {                       // Target options
+      min: {
+        options: {
           style: 'compressed',
           sourcemap: 'none'
         },
@@ -93,7 +82,6 @@ module.exports = function(grunt) {
         dest: 'dist/js/materialize.js'
       }
     },
-
 
 //  Uglify
     uglify: {
@@ -165,13 +153,12 @@ module.exports = function(grunt) {
                    
     
 //  Clean
-    clean: {
-      build: {
-        src: [ 'dist/' ]
-      },
-    },
-                   
-                  
+//    clean: {
+//      build: {
+//        src: [ 'dist/' ]
+//      },
+//    },
+
 //  Jade
     jade: {
       compile: {
@@ -207,8 +194,8 @@ module.exports = function(grunt) {
       },
                    
       js: {
-        files: ["js/jquery.easing.1.3.js",
-                "js/velocity.min.js",
+        files: [ "js/jquery.easing.1.3.js",
+                 "js/velocity.min.js",
                  "js/hammer.min.js",
                  "js/jquery.hammer.js",
                  "js/collapsible.js",
@@ -317,19 +304,10 @@ module.exports = function(grunt) {
           useAvailablePort: true,
           hostname: '*',
           keepalive: true
-//          
-//          ,onCreateServer: function(server, connect, options) {
-//            var io = require('socket.io').listen(server);
-//            io.sockets.on('connection', function(socket) {
-//              // do something with socket
-//            });
-//          }
         }
       }
     }
-                  
 
-    
   });
  
   // load the tasks
@@ -340,18 +318,17 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compress');
-  grunt.loadNpmTasks('grunt-contrib-clean');
+//  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-notify');
   grunt.loadNpmTasks('grunt-contrib-connect');
 
- 
   // define the tasks
-  grunt.registerTask('default', ['copy', 'sass:expanded', 'sass:min', 'concat', 'uglify:dist', 'compress:main', 'compress:src', 'clean']);
+  grunt.registerTask('default', ['copy', 'sass:expanded', 'sass:min', 'concat', 'uglify:dist', 'compress:main', 'compress:src']);
   
   grunt.registerTask('jade_compile', ['jade', 'notify:jade_compile']);
-  grunt.registerTask('js_compile', ['concat:dist', 'uglify:bin', 'notify:js_compile', 'clean']);
+  grunt.registerTask('js_compile', ['concat:dist', 'uglify:bin', 'notify:js_compile']);
   grunt.registerTask('sass_compile', ['sass:gh', 'sass:bin', 'notify:sass_compile']);
   grunt.registerTask('start_server', ['connect:server', 'notify:server']);
   

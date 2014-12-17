@@ -139,15 +139,21 @@
 //    Toggle Containers on page
     var toggleContainersButton = $('#container-toggle-button');
     toggleContainersButton.click(function(){
-      $('.container, .had-container').each(function(){
+      $('body .browser-window .container, .had-container').each(function(){
         $(this).toggleClass('had-container');
         $(this).toggleClass('container');
+        if ($(this).hasClass('container')) {
+          toggleContainersButton.text("Turn off Containers");
+        }
+        else {
+          toggleContainersButton.text("Turn on Containers");
+        }
       });
     });
 
 
     // Plugin initialization
-    $('.dropdown-button').dropdown({"hover": false});
+    $('.dropdown-button').dropdown({hover: false});
     if (window_width > 600) {
       $('ul.tabs').tabs();
     }
@@ -163,7 +169,7 @@
     $('.materialboxed').materialbox();
     $('.scrollspy').scrollSpy();
     $('.button-collapse').sideNav();
-    $('.datepicker').pickadate();
+    $('.datepicker').pickadate({ formatSubmit: 'yyyy/mm/dd' });
 
   }); // end of document ready
 })(jQuery); // end of jQuery name space

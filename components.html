@@ -27,22 +27,24 @@
         (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
       })();
       
-      
     </script>
-    <nav id="">
-      <div class="container">
-        <div class="nav-wrapper"><a href="http://materializecss.com/" class="brand-logo">Materialize</a>
-          <ul id="nav-mobile" class="right side-nav">
-            <li><a href="http://materializecss.com/about.html">About</a></li>
-            <li><a href="http://materializecss.com/getting_started.html">Getting Started</a></li>
-            <li><a href="http://materializecss.com/sass.html">Sass</a></li>
-            <li class="active"><a href="http://materializecss.com/components.html">Components</a></li>
-            <li><a href="http://materializecss.com/javascript.html">JavaScript</a></li>
-            <li><a href="http://materializecss.com/mobile.html">Mobile</a></li>
-          </ul><a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+    <header>
+      <nav id="">
+        <div class="container">
+          <div class="nav-wrapper"><a href="http://materializecss.com/" class="brand-logo">Materialize</a>
+            <ul id="nav-mobile" class="right side-nav">
+              <li><a href="http://materializecss.com/about.html">About</a></li>
+              <li><a href="http://materializecss.com/getting_started.html">Getting Started</a></li>
+              <li><a href="http://materializecss.com/sass.html">Sass</a></li>
+              <li class="active"><a href="http://materializecss.com/components.html">Components</a></li>
+              <li><a href="http://materializecss.com/javascript.html">JavaScript</a></li>
+              <li><a href="http://materializecss.com/mobile.html">Mobile</a></li>
+            </ul><a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+          </div>
         </div>
-      </div>
-    </nav><div class="tabs-wrapper">
+      </nav>
+    </header>
+    <main><div class="tabs-wrapper">
   <div class="row white z-depth-1">
     <div class="container">
       <ul class="tabs">
@@ -95,7 +97,7 @@
           <p>In case you don't want to use Roboto on your webpage, fear not. Simply change the font stack by modifying the code below to your liking and add it to your custom css.</p>
         <pre><code class="language-css">
   html {
-    font-family: GillSans, Calibri, Trebuchet, sans-serif
+    font-family: GillSans, Calibri, Trebuchet, sans-serif;
   }
         </code></pre>
       </div>
@@ -103,7 +105,7 @@
         
         <div id="headers" class="section scrollspy">
           <h4>Headers</h4>
-          <p>We provide some basic styling on header tags. In the example on the right, you can see the difference in sizes between the 6 header tags</p>
+          <p>We provide some basic styling on header tags. In the example on the right, you can see the difference in sizes between the 6 header tags.</p>
           <div class="card-panel">
             <h1>Heading h1</h1>
             <h2>Heading h2</h2>
@@ -157,116 +159,406 @@
 </div>
 <!--    End Typography    -->
 
+<!-- Grid Section -->
   <div id="tab2" class="row">
     <!--      table of contents-->
     <div class="col hide-on-small-only m3 l2">
       <div style="height: 1px;">
         <ul class="section table-of-contents">
-          <li><a href="#grid">Grid</a></li>
-          <li><a href="#offset">Offsets</a></li>
+          <li><a href="#container">Container</a></li>
+          <li><a href="#grid-introduction">Introduction</a></li>
+          <li><a href="#creating-layouts">Creating Layouts</a></li>
+          <li><a href="#responsive-layouts">Responsive Layouts</a></li>
         </ul>
       </div>
     </div>
 
     <div class="col s12 m9 l10">
-      <div id="grid" class="section scrollspy">
+      <div>
         <h2 class="header">Grids</h2>
-        <p class="caption">
-          We are using a standard 12 column fluid responsive grid system. It comes with 3 standard screen size media queries where you  can alter the columns.</p>
-        <table class="hoverable">
-          <thead>
-            <tr>
-                <th></th>
-                <th data-field="id">Mobile Devices <br>&lt;= 600px</th>
-                <th data-field="name">Tablet Devices <br>&lt;= 992px</th>
-                <th data-field="price">Desktop Devices <br>&gt;= 992px</th>
-            </tr>
-          </thead>
-            <tbody>
-            <tr>
-              <td><strong>Class Prefix</strong></td>
-              <td><code class="language-markup">.s</code></td>
-              <td><code class="language-markup">.m</code></td>
-              <td><code class="language-markup">.l</code></td>
-            </tr>
-            <tr>
-              <td><strong>Container Width</strong></td>
-              <td>85%</td>
-              <td>85%</td>
-              <td>70%</td>
-            </tr>
-            <tr>
-              <td><strong>Number of Columns</strong></td>
-              <td>12</td>
-              <td>12</td>
-              <td>12</td>
-            </tr>
-          </tbody>
-        </table>
+        <p class="caption">We are using a standard 12 column fluid responsive grid system.The grid helps you layout your page in an ordered, easy fashion</p>
+        
+        <div id="container" class="section scrollspy">
+          <h3 class="header">Container</h3>
+          <p>The container class is not strictly part of the grid but is important in laying out content. It allows you to center your page content. The <code class="language-markup">container</code> class is set to ~70% of the window width. It helps you center and contain your page content. We use the container to contain our body content.
 
-        <br><br>
-        <h4>Container</h4>
-        <p>The container class is set to ~70% of the window width. It helps you center and contain your page content. We use the container to contain our body content. Try the button below to see what the page looks like without containers</p>
-        <a id="container-toggle-button" class="btn waves-effect waves-light">Toggle Containers</a>
-        <p>To add a container just put your content inside a <code class="language-markup">&lt;div></code> tag with a <code class="language-markup">container</code> class. Here's an example of how your page might be set up.</p>
-        <pre><code class="language-markup">
-  &lt;body>
-    &lt;div class="container">
-      &lt;!-- Page Content goes here -->
-    &lt;/div>
-  &lt;/body>
-        </code></pre>
-        <h4>Grid Examples</h4>
-        <div class="row">
-          <div class="col grid-example s12 blue lighten-1"><p>s12</p></div>
-          <div class="col grid-example s12 m3 teal lighten-1"><p>s12 m3</p></div>
-          <div class="col grid-example s12 m6 teal lighten-1"><p>s12 m6</p></div>
-          <div class="col grid-example s12 m3 teal lighten-1"><p>s12 m3</p></div>
-          <div class="col grid-example s12 m6 l3 purple lighten-3"><p>s12 m6 l3</p></div>
-          <div class="col grid-example s12 m6 l3 purple lighten-3"><p>s12 m6 l3</p></div>
-          <div class="col grid-example s12 m6 l3 purple lighten-3"><p>s12 m6 l3</p></div>
-          <div class="col grid-example s12 m6 l3 purple lighten-3"><p>s12 m6 l3</p></div>
+          <h4>Demo</h4>
+          <p>Try the button below to see what the page looks like without containers</p>
+          <a id="container-toggle-button" class="btn waves-effect waves-light">Turn off Containers</a>
+
+  <!-- Container Visual Demo -->
+          <div class="row">
+            <div class="col s12">
+              <div class='browser-window'>
+                <div class='top-bar'>
+                  <div class='circles'>
+                     <div id="close-circle" class="circle"></div>
+                     <div id="minimize-circle" class="circle"></div>
+                     <div id="maximize-circle" class="circle"></div>
+                  </div>
+                </div>
+                <div class='content'>
+                  <div class="row">
+
+                    <div id="site-layout-example-top" class="col s12">
+                      <!-- <p class="flat-text-logo"></p> -->
+                    </div>
+                    <div id="site-layout-example-right" class="col s12">
+                      <div class="container">
+                
+                        <p class="flat-text small"></p>
+                        <p class="flat-text full-width"></p>
+                        <p class="flat-text full-width"></p>
+                        <p class="flat-text full-width"></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <p>To add a container just put your content inside a <code class="language-markup">&lt;div></code> tag with a <code class="language-markup">container</code> class. Here's an example of how your page might be set up.</p>
+
+          <pre><code class="language-markup">
+    &lt;body>
+      &lt;div class="container">
+        &lt;!-- Page Content goes here -->
+      &lt;/div>
+    &lt;/body>
+          </code></pre>
+
         </div>
-        <div class="row">
-          <pre><code class="language-markup col s12">
+
+
+        <!-- Grid visual demo -->
+        <div id="grid-introduction" class="scrollspy">
+          <h3 class="header">Introduction</h3>
+          <p>Take a look at this section to quickly understand how the grid works!</p>
+          <h4>12 Columns</h4>
+          <p>Our standard grid has 12 columns. No matter the size of the browser, each of these columns will always have an equal width.</p>
+          <div class="row">
+            <div class="col s1 grid-example"><span class="flow-text">1</span></div>
+            <div class="col s1 grid-example"><span class="flow-text">2</span></div>
+            <div class="col s1 grid-example"><span class="flow-text">3</span></div>
+            <div class="col s1 grid-example"><span class="flow-text">4</span></div>
+            <div class="col s1 grid-example"><span class="flow-text">5</span></div>
+            <div class="col s1 grid-example"><span class="flow-text">6</span></div>
+            <div class="col s1 grid-example"><span class="flow-text">7</span></div>
+            <div class="col s1 grid-example"><span class="flow-text">8</span></div>
+            <div class="col s1 grid-example"><span class="flow-text">9</span></div>
+            <div class="col s1 grid-example"><span class="flow-text">10</span></div>
+            <div class="col s1 grid-example"><span class="flow-text">11</span></div>
+            <div class="col s1 grid-example"><span class="flow-text">12</span></div>
+          </div>
+          <p>To get a feel of how the grid is used in HTML. Take a look at this code below which will produce a similar result as the one above.</p>
+          <pre><code class="language-markup">
     &lt;div class="row">
-    &lt;div class="col s12">&lt;p>s12&lt;/p>&lt;/div>
-    &lt;div class="col s12 m3">&lt;p>s12 m3&lt;/p>&lt;/div>
-    &lt;div class="col s12 m6">&lt;p>s12 m6&lt;/p>&lt;/div>
-    &lt;div class="col s12 m3">&lt;p>s12 m3&lt;/p>&lt;/div>
+      &lt;div class="col s1">1&lt;/div>
+      &lt;div class="col s1">2&lt;/div>
+      &lt;div class="col s1">3&lt;/div>
+      &lt;div class="col s1">4&lt;/div>
+      &lt;div class="col s1">5&lt;/div>
+      &lt;div class="col s1">6&lt;/div>
+      &lt;div class="col s1">7&lt;/div>
+      &lt;div class="col s1">8&lt;/div>
+      &lt;div class="col s1">9&lt;/div>
+      &lt;div class="col s1">10&lt;/div>
+      &lt;div class="col s1">11&lt;/div>
+      &lt;div class="col s1">12&lt;/div>
     &lt;/div>
+          </code></pre>
+          <p>Note: For now, just know that the <code class="language-markup">s1</code> stands for small-1 which in plain English means "1 column on small screens".</p>
+      
+          <br>
+
+          <h4>Columns live inside Rows</h4>
+          <p>Remember when you are creating your layout that all columns must be contained inside a row and that you must add the <code class="language-markup">col</code> class to your inner divs to make them into columns</p>
+          <div class="row">
+            <div class="col s12 grid-example"><span class="flow-text">This div is 12-columns wide on all screen sizes</span></div>
+            <div class="col s6 grid-example"><span class="flow-text">6-columns (one-half)</span></div>
+            <div class="col s6 grid-example"><span class="flow-text">6-columns (one-half)</span></div>
+          </div>
+          <pre><code class="language-markup">
     &lt;div class="row">
-    &lt;div class="col s12 m6 l3">&lt;p>s12 m6 l3&lt;/p>&lt;/div>
-    &lt;div class="col s12 m6 l3">&lt;p>s12 m6 l3&lt;/p>&lt;/div>
-    &lt;div class="col s12 m6 l3">&lt;p>s12 m6 l3&lt;/p>&lt;/div>
-    &lt;div class="col s12 m6 l3">&lt;p>s12 m6 l3&lt;/p>&lt;/div>
+      &lt;div class="col s12">This div is 12-columns wide&lt;/div>
+      &lt;div class="col s6">This div is 6-columns wide&lt;/div>
+      &lt;div class="col s6">This div is 6-columns wide&lt;/div>
+    &lt;/div>
+          </code></pre>
+
+          <br>
+          <div id="offset" class="section scrollspy">
+            <h4>Offsets</h4>
+            <p>To offset, simply add <code class="language-markup">offset-s2</code> to the class where <code class="language-markup">s</code> signifies the screen class-prefix (s = small, m = medium, l = large) and the number after is the number of columns you want to offset by.</p>
+            <div class="row">
+              <div class="col s12 grid-example"><span class="flow-text">This div is 12-columns wide on all screen sizes</span></div>
+              <div class="col s6 offset-s6 grid-example"><span class="flow-text">6-columns (offset-by-6)</span></div>
+            </div>
+            <pre><code class="language-markup">
+      &lt;div class="row">
+        &lt;div class="col s12 grid-example">&lt;span class="flow-text">This div is 12-columns wide on all screen sizes&lt;/span>&lt;/div>
+        &lt;div class="col s6 offset-s6 grid-example">&lt;span class="flow-text">6-columns (offset-by-6)&lt;/span>&lt;/div>
+      &lt;/div>
+            </code></pre>
+          </div>
+        </div>
+
+        <br>
+        
+        <!-- Creating Layouts -->
+        <div id="creating-layouts" class="scrollspy">
+          <h3 class="header">Creating Layouts</h3>
+          <p>Here we will show you how to create some commonly used layouts with our grid system. Hopefully these will get you more comfortable with laying out elements. To keep these demos simple, the ones here will not be responsive.</p>
+          <h4>Example Promotion Table</h4>
+          <p>If we want 3 divs that are equal size, we define the divs with a width of 4-columns, 4+4+4 = 12, which nicely adds up to 12. Inside those divs, we can put our content. Take our front page content for example. We've modified it slightly for the sake of this example.</p>
+          <div class="row">
+            <div class="col s4">
+              <div class="center promo promo-example">
+                <i class="mdi-image-flash-on"></i>
+                <p class="promo-caption">Speeds up development</p>
+                <p class="light center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components.</p>
+              </div>
+            </div>
+            <div class="col s4">
+              <div class="center promo promo-example">
+                <i class="mdi-social-group"></i>
+                <p class="promo-caption">User Experience Focused</p>
+                <p class="light center">By utilizing elements and principles of Material Design, we were able to create a framework that focuses on User Experience.</p>
+              </div>
+            </div>
+            <div class="col s4">
+              <div class="center promo promo-example">
+                <i class="mdi-action-settings"></i>
+                <p class="promo-caption">Easy to work with</p>
+                <p class="light center">We have provided detailed documentation as well as specific code examples to help new users get started.</p>
+              </div>
+            </div>
+          </div>
+
+          <pre><code class="language-markup">
+    &lt;div class="row">
+
+      &lt;div class="col s4">
+        &lt;!-- Promo Content 1 goes here -->
+      &lt;/div>
+      &lt;div class="col s4">
+        &lt;!-- Promo Content 2 goes here -->
+      &lt;/div>
+      &lt;div class="col s4">
+        &lt;!-- Promo Content 3 goes here -->
+      &lt;/div>
+
+    &lt;/div>
+          </code></pre>
+
+          <br>
+
+          <h4>Example Side Navigation Layout</h4>
+          <p>You can see how easy it is to create layouts using the grid system. Just remember to make sure your column numbers add up to 12 for a even layout</p>
+
+          <div class="row">
+            <div class="col s12">
+              <div class='browser-window'>
+                <div class='top-bar'>
+                  <div class='circles'>
+                     <div id="close-circle" class="circle"></div>
+                     <div id="minimize-circle" class="circle"></div>
+                     <div id="maximize-circle" class="circle"></div>
+                  </div>
+                </div>
+                <div class='content'>
+                  <div class="row">
+
+                    <div id="site-layout-example-top" class="col s12">
+                      <!-- <p class="flat-text-logo"></p> -->
+                    </div>
+                    <div id="site-layout-example-left" class="col s3">
+                      <p class="flat-text-header"></p>
+                      <p class="flat-text"></p>
+                      <p class="flat-text"></p>
+                    </div>
+                    <div id="site-layout-example-right" class="col s9">
+                      <p class="flat-text"></p>
+                      <p class="flat-text"></p>
+                      <p class="flat-text"></p>
+                      <p class="flat-text"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <pre><code class="language-markup">
+    &lt;!-- Navbar goes here -->
+    
+    &lt;!-- Page Layout here -->
+    &lt;div class="row">
+
+      &lt;div class="col s3">
+        &lt;!-- Grey navigation panel -->
+      &lt;/div>
+
+      &lt;div class="col s9">
+        &lt;!-- Teal page content  -->
+      &lt;/div>
+
     &lt;/div>
           </code></pre>
         </div>
-      </div>
 
-      <div id="offset" class="section scrollspy">
-        <h4>Offsets</h4>
-        <p>You can use offsets to make smaller sized columns without needing to fill in the empty space.</p>
 
-        <div class="row">
-          <div class="col grid-example s8 offset-s2 cyan lighten-1"><p>s8 offset-s2</p></div>
-          <div class="col grid-example s8 offset-s2 m8 offset-m4 l10 offset-l2 amber lighten-1"><p>s8 offset-s2 m8 offset-m4 l10 offset-l2</p></div>
-        </div>
+        <!-- Creating Responsive Layouts -->
+        <div id="responsive-layouts" class="scrollspy">
+          <h3 class="header">Creating Responsive Layouts</h3>
+          <p>Above we showed you how to layout elements using our grid system. Now we'll show you how to design your layouts so that they look great on all screen sizes.</p>
+          <h4>Screen Sizes</h4>
+          <table class="hoverable">
+            <thead>
+              <tr>
+                  <th></th>
+                  <th data-field="id">Mobile Devices <br>&lt;= 600px</th>
+                  <th data-field="name">Tablet Devices <br>&lt;= 992px</th>
+                  <th data-field="price">Desktop Devices <br>&gt;= 992px</th>
+              </tr>
+            </thead>
+              <tbody>
+              <tr>
+                <td><strong>Class Prefix</strong></td>
+                <td><code class="language-markup">.s</code></td>
+                <td><code class="language-markup">.m</code></td>
+                <td><code class="language-markup">.l</code></td>
+              </tr>
+              <tr>
+                <td><strong>Container Width</strong></td>
+                <td>85%</td>
+                <td>85%</td>
+                <td>70%</td>
+              </tr>
+              <tr>
+                <td><strong>Number of Columns</strong></td>
+                <td>12</td>
+                <td>12</td>
+                <td>12</td>
+              </tr>
+            </tbody>
+          </table>
 
-        <div class="row">
-          <pre><code class="language-markup col s12">
-    &lt;div class="col s8 offset-s2">
-      &lt;p>s8 offset-s2&lt;/p>
-    &lt;/div>
-    &lt;div class="col s6 offset-s6 m8 offset-m4 l10 offset-l2">
-      &lt;p>s8 offset-s2 m8 offset-m4 l10 offset-l2&lt;/p>
+          <br>
+
+          <h4>Adding Responsiveness</h4>
+          <p>In the previous examples, we only defined the size for small screens using <code class="language-markup">"col s12"</code>. This is fine if we want a fixed layout since the rules propogate upwards. By just saying s12, we are essentially saying <code class="language-markup">"col s12 m12 l12"</code>. But by explicitly defining the size we can make our website more responsive.</p>
+
+          <div class="row">
+            <div class="grid-example col s12 teal lighten-2"><span class="flow-text">I am always full-width (col s12)</span></div>
+            <div class="grid-example col s12 m6 teal lighten-2"><span class="flow-text">I am full-width on mobile (col s12 m6)</span></div>
+          </div>
+          <pre><code class="language-markup">
+    &lt;div class="row">
+      &lt;div class="grid-example col s12">&lt;span class="flow-text">I am always full-width (col s12)&lt;/span>&lt;/div>
+      &lt;div class="grid-example col s12 m6">&lt;span class="flow-text">I am full-width on mobile (col s12 m6)&lt;/span>&lt;/div>
     &lt;/div>
           </code></pre>
+
+          <br>
+
+          <h4>Responsive Side Navigation Layout</h4>
+          <p>In this example below, we take the same layout from above, but we make it responsive by defining how many columns the div should take up on each screen size. Try resizing your browser and watch the layout change below.</p>
+
+          <div class="row">
+            <div class="col s12">
+              <div class='browser-window'>
+                <div class='top-bar'>
+                  <div class='circles'>
+                     <div id="close-circle" class="circle"></div>
+                     <div id="minimize-circle" class="circle"></div>
+                     <div id="maximize-circle" class="circle"></div>
+                  </div>
+                </div>
+                <div class='content'>
+                  <div class="row">
+
+                    <div id="site-layout-example-top" class="col s12">
+                      <!-- <p class="flat-text-logo"></p> -->
+                    </div>
+                    <div id="site-layout-example-left" class="col s12 m4 l3">
+                      <p class="flat-text-header"></p>
+                      <p class="flat-text"></p>
+                      <p class="flat-text"></p>
+                    </div>
+                    <div id="site-layout-example-right" class="col s12 m8 l9">
+                      <p class="flat-text"></p>
+                      <p class="flat-text"></p>
+                      <p class="flat-text"></p>
+                      <p class="flat-text"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <pre><code class="language-markup">
+    &lt;!-- Navbar goes here -->
+    
+    &lt;!-- Page Layout here -->
+    &lt;div class="row">
+
+      &lt;div class="col s12 m4 l3"> &lt;!-- Note that "m4 l3" was added -->
+        &lt;!-- Grey navigation panel
+
+              This content will be:
+          3-columns-wide on large screens,
+          4-columns-wide on medium screens,
+          12-columns-wide on small screens  -->
+
+      &lt;/div>
+
+      &lt;div class="col s12 m8 l9"> &lt;!-- Note that "m8 l9" was added -->
+        &lt;!-- Teal page content
+
+              This content will be:
+          9-columns-wide on large screens,
+          8-columns-wide on medium screens,
+          12-columns-wide on small screens  -->
+
+      &lt;/div>
+
+    &lt;/div>
+          </code></pre>
+
+          <h4>More Responsive Grid Examples</h4>
+          <div class="row">
+            <div class="col grid-example s12 blue lighten-1"><span class="flow-text">s12</span></div>
+            <div class="col grid-example s12 m4 l2 teal lighten-1"><span class="flow-text">s12 m4 l2</span></div>
+            <div class="col grid-example s12 m4 l8 teal lighten-1"><span class="flow-text">s12 m4 l8</span></div>
+            <div class="col grid-example s12 m4 l2 teal lighten-1"><span class="flow-text">s12 m4 l2</span></div>
+            <div class="col grid-example s12 m6 l3 purple lighten-3"><span class="flow-text">s12 m6 l3</span></div>
+            <div class="col grid-example s12 m6 l3 purple lighten-3"><span class="flow-text">s12 m6 l3</span></div>
+            <div class="col grid-example s12 m6 l3 purple lighten-3"><span class="flow-text">s12 m6 l3</span></div>
+            <div class="col grid-example s12 m6 l3 purple lighten-3"><span class="flow-text">s12 m6 l3</span></div>
+          </div>
+          <div class="row">
+            <pre><code class="language-markup col s12">
+      &lt;div class="row">
+      &lt;div class="col s12">&lt;p>s12&lt;/p>&lt;/div>
+      &lt;div class="col s12 m3 l2">&lt;p>s12 m4&lt;/p>&lt;/div>
+      &lt;div class="col s12 m6 l8">&lt;p>s12 m4&lt;/p>&lt;/div>
+      &lt;div class="col s12 m3 l2">&lt;p>s12 m4&lt;/p>&lt;/div>
+      &lt;/div>
+      &lt;div class="row">
+      &lt;div class="col s12 m6 l3">&lt;p>s12 m6 l3&lt;/p>&lt;/div>
+      &lt;div class="col s12 m6 l3">&lt;p>s12 m6 l3&lt;/p>&lt;/div>
+      &lt;div class="col s12 m6 l3">&lt;p>s12 m6 l3&lt;/p>&lt;/div>
+      &lt;div class="col s12 m6 l3">&lt;p>s12 m6 l3&lt;/p>&lt;/div>
+      &lt;/div>
+            </code></pre>
+          </div>
         </div>
       </div>
     </div>
-
   </div>
 
 <!--  Forms Section  -->
@@ -445,7 +737,7 @@
         <p>Radio Buttons are used when the user must make only one selection out of a group of items</p>
         <form action="#">
           <p>
-            <input name="group1" type="radio" id="test1" />
+            <input name="group1" type="radio" id="test1" checked />
             <label for="test1">Red</label>
           </p>
           <p>
@@ -453,7 +745,7 @@
             <label for="test2">Yellow</label>
           </p>
           <p>
-            <input name="group1" type="radio" id="test3"  />
+            <input class="with-gap" name="group1" type="radio" id="test3"  />
             <label for="test3">Green</label>
           </p>
             <p>
@@ -474,7 +766,7 @@
       &lt;label for="test2">Yellow&lt;/label>
     &lt;/p>
     &lt;p>
-      &lt;input name="group1" type="radio" id="test3"  />
+      &lt;input class="with-gap" name="group1" type="radio" id="test3"  />
       &lt;label for="test3">Green&lt;/label>
     &lt;/p>
       &lt;p>
@@ -484,6 +776,23 @@
   &lt;/form>
           </code></pre>
         </div>
+        <div class="row">
+          <h5>Options</h5>
+          <p>To create a radio button with a gap, add <code class="language-markup">class="with-gap"</code> to your input. See the example below.</p>
+          
+          <p>
+            <input class="with-gap" name="group3" type="radio" id="test5" checked />
+            <label for="test5">Red</label>
+          </p>
+          <pre><code class="language-markup">
+  &lt;p>
+    &lt;input class="with-gap" name="group3" type="radio" id="test5" checked />
+    &lt;label for="test5">Red&lt;/label>
+  &lt;/p>
+          </code></pre>
+          
+          
+        </div>
       </div>
 
       <div id="checkbox" class="section scrollspy">
@@ -491,8 +800,8 @@
         <p>Checkboxes</p>
         <form action="#">
           <p>
-            <input type="checkbox" id="test5" />
-            <label for="test5">Red</label>
+            <input type="checkbox" id="test9" />
+            <label for="test9">Red</label>
           </p>
           <p>
             <input type="checkbox" id="test6" checked="checked" />
@@ -543,8 +852,7 @@
           <pre><code class="language-markup col s12">
   &lt;form action="#">
     &lt;p class="range-field">
-      &lt;input type="range" id="test5" />
-      &lt;label for="test5">Red&lt;/label>
+      &lt;input type="range" id="test5" min="0" max="100" />
     &lt;/p>
   &lt;/form>
           </code></pre>
@@ -558,7 +866,7 @@
         <input id="birthdate" type="text" class="datepicker"></input>
         <div class="row" >
           <pre><code class="language-markup col s12">
-  &lt;input type="date" class="datepicker">&lt;/div>
+  &lt;input type="date" class="datepicker">
           </code></pre>
         <h5>Initialization</h5>
         <p>At this time, not all pickadate.js options are working with our implementation</p>
@@ -580,6 +888,7 @@
           <li><a href="#raised">Raised</a></li>
           <li><a href="#floating">Floating</a></li>
           <li><a href="#flat">Flat</a></li>
+          <li><a href="#submit">Submit</a></li>
           <li><a href="#large">Large</a></li>
           <li><a href="#disabled">Disabled</a></li>
         </ul>
@@ -591,21 +900,19 @@
         There are 3 main button types described in material design. The raised button is a standard button that signify actions and seek to give depth to a mostly flat page. The floating circular action button is meant for very important functions. Flat buttons are usually used within elements that already have depth like cards or modals.
         </p>
       <div id="raised" class="section scrollspy">
-        <h4 class="col s12">Raised</h4>
-        <div class="col s12">
-          <a class="waves-effect waves-light btn">button</a>
-          <a class="waves-effect waves-light btn"><i class="mdi-file-cloud left"></i>button</a>
-          <a class="waves-effect waves-light btn"><i class="mdi-file-cloud right"></i>button</a>
-          <pre><code class="language-markup col s12">
-  &lt;a class="waves-effect waves-light btn">Stuff&lt;/a>
-  &lt;a class="waves-effect waves-light btn">&lt;i class="mdi-file-cloud left">&lt;/i>button&lt;/a>
-  &lt;a class="waves-effect waves-light btn">&lt;i class="mdi-file-cloud right">&lt;/i>button&lt;/a>
-          </code></pre>
-        </div>
+        <h4>Raised</h4>
+        <a class="waves-effect waves-light btn">button</a>
+        <a class="waves-effect waves-light btn"><i class="mdi-file-cloud left"></i>button</a>
+        <a class="waves-effect waves-light btn"><i class="mdi-file-cloud right"></i>button</a>
+        <pre><code class="language-markup col s12">
+&lt;a class="waves-effect waves-light btn">Stuff&lt;/a>
+&lt;a class="waves-effect waves-light btn">&lt;i class="mdi-file-cloud left">&lt;/i>button&lt;/a>
+&lt;a class="waves-effect waves-light btn">&lt;i class="mdi-file-cloud right">&lt;/i>button&lt;/a>
+        </code></pre>
       </div>
       <div id="floating" class="section scrollspy">
         <h4>Floating</h4>
-        <a class="btn-floating"><i class="mdi-content-add"></i></a>
+        <a class="btn-floating"><i class="mdi-content-add"></i></a><br><br>
         <pre><code class="language-markup col s12">
   &lt;a class="btn-floating">&lt;i class="mdi-content-add">&lt;/i>&lt;/a>
         </code></pre>
@@ -617,7 +924,7 @@
   &lt;a class="waves-effect waves-teal btn-flat">Button&lt;/a>
         </code></pre>
       </div>
-      <div id="Submit" class="section scrollspy">
+      <div id="submit" class="section scrollspy">
         <h4>Submit Button</h4>
         <p>When you use a button to submit a form, instead of using a input tag, use a button tag with a type submit</p>
         <button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="mdi-content-send right"></i></button>
@@ -745,12 +1052,17 @@
       <div id="navbar-dropdown" class="section scrollspy">
 
         <h4>Navbar Dropdown Menu</h4>
-        <p>To right align your navbar links, just add a <code class="language-markup">right</code> class to your <code class="language-markup">&lt;ul></code> that contains them.</p>
-  
+        <p>
+          To add a navbar dropdown menu, add the <code class="language-markup">ul</code> dropdown structure into the page.
+          Then, add an element to trigger the dropdown menu. Make sure to supply the id of the dropdown structure to the
+          <code class="language-markup">data-activates</code> attribute of the dropdown trigger.
+        </p>
+
         <!-- Dropdown Structure -->
-        <ul id='dropdown1' class='dropdown-content'>
+        <ul id="dropdown1" class="dropdown-content">
           <li><a href="#!">one</a></li>
           <li><a href="#!">two</a></li>
+          <li class="divider"></li>
           <li><a href="#!">three</a></li>
         </ul>
         <nav>
@@ -762,7 +1074,7 @@
                 <li><a href="sass.html">Sass</a></li>
                 <li><a href="components.html">Components</a></li>
                 <!-- Dropdown Trigger -->
-                <li><a class="dropdown-button" href="" data-activates='dropdown1'>Dropdown<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
               </ul>
             </div>
           </div>
@@ -770,9 +1082,10 @@
         <div class="row">
           <pre><code class="language-markup col s12">
   &lt;!-- Dropdown Structure -->
-  &lt;ul id='dropdown1' class='dropdown-content'>
+  &lt;ul id="dropdown1" class="dropdown-content">
     &lt;li>&lt;a href="#!">one&lt;/a>&lt;/li>
     &lt;li>&lt;a href="#!">two&lt;/a>&lt;/li>
+    &lt;li class="divider">&lt;/li>
     &lt;li>&lt;a href="#!">three&lt;/a>&lt;/li>
   &lt;/ul>
   &lt;nav>
@@ -784,12 +1097,22 @@
           &lt;li>&lt;a href="sass.html">Sass&lt;/a>&lt;/li>
           &lt;li>&lt;a href="components.html">Components&lt;/a>&lt;/li>
           &lt;!-- Dropdown Trigger -->
-          &lt;li>&lt;a class="dropdown-button" href="" data-activates='dropdown1'>Dropdown&lt;i class="mdi-navigation-arrow-drop-down right">&lt;/i>&lt;/a>&lt;/li>
+          &lt;li>&lt;a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown&lt;i class="mdi-navigation-arrow-drop-down right">&lt;/i>&lt;/a>&lt;/li>
         &lt;/ul>
       &lt;/div>
     &lt;/div>
   &lt;/nav>
           </code></pre>
+          <p>To activate the dropdown menu, insert this line of code into your JavaScript file, within the <code class="language-javascript">$( document ).ready(function)</code> block</p>
+          <pre><code class="language-javascript">
+  $(".dropdown-button").dropdown();
+          </code></pre>
+          <h5>Trigger dropdown menu on click</h5>
+          <p>
+            By default, the dropdown menu is activated by hovering over the dropdown trigger.
+            To activate the dropdown menu on click, pass <code class="language-javascript">{ hover: false }</code>
+            into the above <code class="language-javascript">dropdown()</code> function
+          </p>
         </div>
       </div>
 
@@ -890,7 +1213,10 @@
           <li><a href="#cards">Cards</a></li>
           <li><a href="#preloader">Preloader</a></li>
           <li><a href="#collections">Collections</a></li>
+          <li><a href="#badges">Badges</a></li>
+          <li><a href="#images">Images</a></li>
           <li><a href="#tables">Tables</a></li>
+          <li><a href="#footer">Footer</a></li>
         </ul>
       </div>
     </div>
@@ -902,13 +1228,12 @@
       <p class="caption">Cards are a convenient means of displaying content composed of different types of objects. They’re also well-suited for presenting similar objects whose size or supported actions can vary considerably, like photos with captions of variable length.</p>
     <div class="row">
       <div class="col s12 m6">
+        <!-- Basic Card -->
+        <h4>Basic Card</h4>
         <div class="card blue-grey darken-1">
-          <div class="card-image">
-            <span class="card-title">Card Title</span>
-          </div>  
           <div class="card-content white-text">
             <span class="card-title">Card Title</span>
-            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively. <br>
+            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
           </div>
           <div class="card-action">
             <a href="#">This is a link</a>
@@ -916,7 +1241,33 @@
           </div>
         </div>
       </div>
-      <div class="col s12 m6">
+
+        <div class="col s12">
+          <pre><code class="language-markup">
+  &lt;div class="row">
+    &lt;div class="col s12 m6">
+      &lt;div class="card blue-grey darken-1">
+        &lt;div class="card-content white-text">
+          &lt;span class="card-title">Card Title&lt;/span>
+          &lt;p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.&lt;/p>
+        &lt;/div>
+        &lt;div class="card-action">
+          &lt;a href="#">This is a link&lt;/a>
+          &lt;a href='#'>This is a link&lt;/a>
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+        </code></pre>
+        <br>
+      </div>
+
+      
+
+      <!-- Image Card -->
+      <div class="col s12 m7">
+       <h4>Image Card</h4>
         <div class="card">
           <div class="card-image">
             <img src="images/sample-1.jpg">
@@ -932,6 +1283,33 @@
         </div>
       </div>
       <div class="col s12">
+        <pre><code class="language-markup">
+  &lt;div class="row">
+    &lt;div class="col s12 m7">
+      &lt;div class="card">
+        &lt;div class="card-image">
+          &lt;img src="images/sample-1.jpg">
+          &lt;span class="card-title">Card Title&lt;/span>
+        &lt;/div>  
+        &lt;div class="card-content">
+          &lt;p>I am a very simple card. I am good at containing small bits of information. 
+          I am convenient because I require little markup to use effectively.&lt;/p>
+        &lt;/div>
+        &lt;div class="card-action">
+          &lt;a href="#">This is a link&lt;/a>
+          &lt;a href='#'>This is a link&lt;/a>
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+        </code></pre>
+        <br>
+      </div>
+      
+      <!-- Small Card -->
+      <div class="col s12 m6">
+        <h4>Small Card</h4>
+        <p>The Small Card limits the height of the card. We provide this as a utility class for you to easily ensure equal card size.</p>
         <div class="card small">
           <div class="card-image">
             <img src="images/sample-1.jpg">
@@ -946,76 +1324,52 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col s12">
-      <pre><code class="language-markup">
-      &lt;div class="col s12 m6">
-        &lt;div class="card blue-grey darken-1">
-          &lt;div class="card-image">
-            &lt;span class="card-title">Card Title&lt;/span>
-          &lt;/div>  
-          &lt;div class="card-content white-text">
-            &lt;span class="card-title">Card Title&lt;/span>
-            &lt;p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively. &lt;br>
-          &lt;/div>
-          &lt;div class="card-action">
-            &lt;a href="#">This is a link&lt;/a>
-            &lt;a href='#'>This is a link&lt;/a>
-          &lt;/div>
-        &lt;/div>
-      &lt;/div>
-      &lt;div class="col s12 m6">
-        &lt;div class="card">
-          &lt;div class="card-image">
-            &lt;img src="images/sample-1.jpg">
-            &lt;span class="card-title">Card Title&lt;/span>
-          &lt;/div>  
-          &lt;div class="card-content">
-            &lt;p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.&lt;/p>
-          &lt;/div>
-          &lt;div class="card-action">
-            &lt;a href="#">This is a link&lt;/a>
-            &lt;a href='#'>This is a link&lt;/a>
-          &lt;/div>
-        &lt;/div>
-      &lt;/div>
-      &lt;div class="col s12">
-        &lt;div class="card small">
-          &lt;div class="card-image">
-            &lt;img src="images/sample-1.jpg">
-            &lt;span class="card-title">Card Title&lt;/span>
-          &lt;/div>  
-          &lt;div class="card-content">
-            &lt;p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.&lt;/p>
-          &lt;/div>
-          &lt;div class="card-action">
-            &lt;a href="#">This is a link&lt;/a>
-            &lt;a href='#'>This is a link&lt;/a>
-          &lt;/div>
-        &lt;/div>
-      &lt;/div>
-      </code></pre>
-      </div>
-    </div>
-      
-    <h4>Card Panel</h4>
-    <p>For a simpler card with less markup, try using a card panel which just has padding and a shadow effect</p>
-    <div class="row">
-      <div class="col s12 m4">
-        <div class="card-panel teal"> <span class="white-text">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</span>
-        </div>
-      </div>
+
       <div class="col s12">
         <pre><code class="language-markup">
   &lt;div class="row">
-    &lt;div class="col s12 m4">
-      &lt;div class="card-panel teal"> &lt;span class="white-text">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.&lt;/span>
+    &lt;div class="col s12">
+      &lt;div class="card small">
+        &lt;div class="card-image">
+          &lt;img src="images/sample-1.jpg">
+          &lt;span class="card-title">Card Title&lt;/span>
+        &lt;/div>  
+        &lt;div class="card-content">
+          &lt;p>I am a very simple card. I am good at containing small bits of information. 
+          I am convenient because I require little markup to use effectively.&lt;/p>
+        &lt;/div>
+        &lt;div class="card-action">
+          &lt;a href="#">This is a link&lt;/a>
+          &lt;a href='#'>This is a link&lt;/a>
+        &lt;/div>
       &lt;/div>
     &lt;/div>
   &lt;/div>
         </code></pre>
+        <br>
       </div>
+
+      <!-- Card Panel -->
+      <div class="col s12 m5">
+        <h4>Card Panel</h4>
+        <p>For a simpler card with less markup, try using a card panel which just has padding and a shadow effect</p>
+
+        <div class="card-panel teal"> <span class="white-text">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.</span>
+        </div>
+      </div>
+        <div class="col s12">
+          <pre><code class="language-markup">
+  &lt;div class="row">
+    &lt;div class="col s12 m5">
+      &lt;div class="card-panel teal">
+        &lt;span class="white-text">I am a very simple card. I am good at containing small bits of information. 
+        I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+        &lt;/span>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+          </code></pre>
+        </div>
     </div>
   </div>
 
@@ -1296,8 +1650,98 @@
     </div>
   </div>
   <!-- End collections -->
-      
-<!--  Tables Section-->
+
+  <!--  Badges Section  -->
+  <div id="badges" class="section scrollspy">
+    
+    <div class="row">
+      <div class="col s12">
+        <h2 class="header">Badges</h2>
+        <p class="caption">Badges can notify you that there are new or unread messages or notifications. Add the <code class="language-markup">new</code> class to the badge to give it the background.</p>
+
+        <ul class="collection">
+          <a href="#!" class="collection-item">Alan<span class="badge">1</span></a>
+          <a href="#!" class="collection-item">Alan<span class="new badge">4</span></a>
+          <a href="#!" class="collection-item">Alan</li>
+          <a href="#!" class="collection-item">Alan<span class="badge">14</span></a>
+        </ul>
+        <pre><code class="language-markup">
+  &lt;ul class="collection">
+    &lt;a href="#!" class="collection-item">Alan&lt;span class="badge">1&lt;/span>&lt;/a>
+    &lt;a href="#!" class="collection-item">Alan&lt;span class="new badge">4&lt;/span>&lt;/a>
+    &lt;a href="#!" class="collection-item">Alan&lt;/li>
+    &lt;a href="#!" class="collection-item">Alan&lt;span class="badge">14&lt;/span>&lt;/a>
+  &lt;/ul>
+        </code></pre>
+
+        <h4>Badges in Dropdown</h4>
+
+        <ul id="dropdown2" class="dropdown-content">
+          <li><a href="#!">one<span class="badge">1</span></a></li>
+          <li><a href="#!">two<span class="new badge">1</span></a></li>
+          <li><a href="#!">three</a></li>
+        </ul>
+        <a class="btn dropdown-button" href="#!" data-activates="dropdown2">Dropdown<i class="mdi-navigation-arrow-drop-down right"></i></a>
+
+        <pre><code class="language-markup">
+  &lt;ul id="dropdown2" class="dropdown-content">
+    &lt;li>&lt;a href="#!">one&lt;span class="badge">1&lt;/span>&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="#!">two&lt;span class="new badge">1&lt;/span>&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="#!">three&lt;/a>&lt;/li>
+  &lt;/ul>
+  &lt;a class="btn dropdown-button" href="#!" data-activates="dropdown2">Dropdown&lt;i class="mdi-navigation-arrow-drop-down right">&lt;/i>&lt;/a>
+        </code></pre>
+
+      </div>
+    </div>
+  </div>
+  <!-- End badges -->
+
+  <!-- Images -->
+  <div id="images" class="section scrollspy">
+    <h2 class="header">Images</h2>
+    <p class="caption">Images can be styled in different ways using Materialize</p>
+    <h4>Circular images</h4>
+    <div class="row">
+      <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row">
+            <div class="col s2">
+              <img src="images/yuna.jpg" alt="" class="circle">
+            </div>
+            <div class="col s10">
+              <span class="black-text">
+                This is a square image. Add the "circle" class to it to make it appear circular.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <p>To make images appear circular, simply add <code class="language-markup">class="circle"</code> to them</p>
+        <pre><code class="language-markup">
+  &lt;div class="col offset-s3 s6">
+    &lt;div class="card-panel grey lighten-5 z-depth-2">
+      &lt;div class="row">
+        &lt;div class="col s2">
+          &lt;img src="images/yuna.jpg" alt="" class="circle"> &lt;!-- notice the "circle" class -->
+        &lt;/div>
+        &lt;div class="col s10">
+          &lt;span class="black-text">
+            This is a square image. Add the "circle" class to it to make it appear circular.
+          &lt;/span>
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+        </code></pre>
+      </div>
+    </div>
+  </div>
+
+  <!--  Tables Section-->
   <div id="tables" class="section scrollspy">
       <h2 class="header">Tables</h2>
       <p class="caption">Tables are a nice way to organize a lot of data. We provide a few utility classes to help you style your table as easily as possible. In addition, to improve mobile experience, all tables on mobile-screen widths are centered automatically.</p>
@@ -1505,8 +1949,70 @@
       </div>
       </div>
       
+    </div><!--  End Tables Section  -->
+
+<!--  Footer Section-->
+  <div id="footer" class="section scrollspy">
+    <h2 class="header">Footer</h2>
+    <p class="caption">Footers are a great way to organize a lot of site navigation and information at the end of a page. This is where the user will look once hes finished scrolling through the current page or is looking for additional information about your website. </p>
+    <p>Note: We use flexbox to structure our html so that the footer is always on the bottom of the page. It is important to keep the structure of your page within the 3 HTML5 tags: <code class="language-markup">&lt;header></code>, <code class="language-markup">&lt;main></code>, <code class="language-markup">&lt;footer></code></p>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text lighten-4">You can use rows and columns here to organize your footer content.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <li><a class="grey-text lighten-3" href="#!">Link 1</a></li>
+            <li><a class="grey-text lighten-3" href="#!">Link 2</a></li>
+            <li><a class="grey-text lighten-3" href="#!">Link 3</a></li>
+            <li><a class="grey-text lighten-3" href="#!">Link 4</a></li>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2014 Copyright Text
+        <a class="grey-text lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>  
+    <div class="row">
+      <div class="col s12">
+        <br>
+        <pre><code class="language-markup">
+    &lt;footer>
+      &lt;div class="container">
+        &lt;div class="row">
+          &lt;div class="col l6 s12">
+            &lt;h5 class="white-text">Footer Content&lt;/h5>
+            &lt;p class="grey-text lighten-4">You can use rows and columns here to organize your footer content.&lt;/p>
+          &lt;/div>
+          &lt;div class="col l4 offset-l2 s12">
+            &lt;h5 class="white-text">Links&lt;/h5>
+            &lt;li>&lt;a class="grey-text lighten-3" href="#!">Link 1&lt;/a>&lt;/li>
+            &lt;li>&lt;a class="grey-text lighten-3" href="#!">Link 2&lt;/a>&lt;/li>
+            &lt;li>&lt;a class="grey-text lighten-3" href="#!">Link 3&lt;/a>&lt;/li>
+            &lt;li>&lt;a class="grey-text lighten-3" href="#!">Link 4&lt;/a>&lt;/li>
+          &lt;/div>
+        &lt;/div>
+      &lt;/div>
+      &lt;div class="footer-copyright">
+        &lt;div class="container">
+        © 2014 Copyright Text
+        &lt;a class="grey-text lighten-4 right" href="#!">More Links&lt;/a>
+        &lt;/div>
+      &lt;/div>
+    &lt;/footer>  
+        </code></pre>
+      </div>
     </div>
-  </div> <!--  End Tables Section  -->
+      
+  </div> <!-- End of footer section -->
+
+  </div> 
     
   </div>
       
@@ -1517,41 +2023,67 @@
   
     </div>
   </div>
-</div><div id="footer" class="section">
-  <div class="footer-block">
-    <iframe src="http://ghbtns.com/github-btn.html?user=dogfalo&repo=materialize&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
-  </div>
-  <div class="footer-block">
-    <a href="https://twitter.com/MaterializeCSS" class="twitter-follow-button" data-show-count="true" data-size="large" data-dnt="true">Follow @MaterializeCSS</a>
-  </div>
-  <div class="footer-block">
-    <div class="g-follow" data-annotation="bubble" data-height="24" data-href="https://plus.google.com/108619793845925798422" data-rel="publisher"></div>
-  </div>
-  <div class="footer-block">
-    <a href="https://github.com/Dogfalo/materialize/blob/master/LICENSE">MIT License</a>
-  </div>
-</div><!--  Scripts-->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="js/jquery.timeago.js"></script>  
-<script src="js/prism.js"></script>
-<script src="bin/materialize.js"></script>
-<script src="js/init.js"></script>
-<!-- Twitter Button -->
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</div>
 
-<!-- Google Plus Button-->
-<script src="https://apis.google.com/js/platform.js" async defer></script>
+    </main>    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col l4 s12">
+            <h5 class="white-text">Help Materialize Grow</h5>
+            <p class="grey-text lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+<button class="btn waves-effect waves-light red lighten-3" type="submit" name="action" alt="PayPal - The safer, easier way to pay online!">Donate Now
+</button>
+</form>
 
-<!--  Google Analytics  -->
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+          </div>
+          <div class="col l4 s12">
+            <h5 class="white-text">Join the Discussion</h5>
+            <p class="grey-text lighten-4">We have a gitter chat room set up where you can talk directly with us. Come in and discuss new features, future goals, general problems or questions, or anything else you can think of.</p>
+            <a class="btn waves-effect waves-light red lighten-3" target="_blank" href="https://gitter.im/Dogfalo/materialize">Chat</a>
+          </div>
+          <div class="col l4 s12" style="overflow: hidden;">
+            <h5 class="white-text">Connect</h5>
+            <iframe src="http://ghbtns.com/github-btn.html?user=dogfalo&repo=materialize&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
+            <br>
+            <a href="https://twitter.com/MaterializeCSS" class="twitter-follow-button" data-show-count="true" data-size="large" data-dnt="true">Follow @MaterializeCSS</a>
+            <br>
+            <div class="g-follow" data-annotation="bubble" data-height="24" data-href="https://plus.google.com/108619793845925798422" data-rel="publisher"></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2014 Materialize, All rights reserved.
+        <a class="grey-text lighten-4 right" href="https://github.com/Dogfalo/materialize/blob/master/LICENSE">MIT License</a>
+        </div>
+      </div>
+    </footer>  
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery.timeago.min.js"></script>  
+    <script src="js/prism.js"></script>
+    <script src="bin/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <!-- Twitter Button -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-ga('create', 'UA-56218128-1', 'auto');
-ga('require', 'displayfeatures');
-ga('send', 'pageview');
-</script>
+    <!-- Google Plus Button-->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <!--  Google Analytics  -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-56218128-1', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+    </script>
   </body>
 </html>
